@@ -26,7 +26,29 @@ public class OracleAccountBookDAO implements AccountBookDAO {
     
     
     // update
-    
+    @Override
+	public int SelectUpdate(String category) {
+		try {
+
+			String sql = "update accountbook set category=?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			// ?가 있으므로 set 함수가 존재한다
+			
+			//ps.setString(1,amount);
+			ps.setString(1, category);
+
+			int rs = ps.executeUpdate();
+			ps.close();
+			return rs;
+			
+			}catch (Exception e) {
+				e.printStackTrace();
+				return 0;
+			}
+			
+		
+	}
+
     
     
     // delete
