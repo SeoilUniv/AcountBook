@@ -8,7 +8,6 @@ import Pakage.AccountBook;
 
 public class Delete {
 
-    // 삭제 전 조회
     public AccountBook findById(Connection conn, int id) {
         String sql = "SELECT id, indate, category, amount FROM AccountBook WHERE id = ?";
 
@@ -32,7 +31,6 @@ public class Delete {
         return null;
     }
 
-    // 실제 삭제
     public int deleteById(Connection conn, int id) {
         String sql = "DELETE FROM AccountBook WHERE id = ?";
 

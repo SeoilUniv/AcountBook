@@ -9,4 +9,5 @@ public interface AccountBookDAO extends Update, Search, findAll, Delete{
 	int insert(AccountBook ab);
     int delete(int id);
 	List<AccountBook> findByDate(String date);
+	
 }
