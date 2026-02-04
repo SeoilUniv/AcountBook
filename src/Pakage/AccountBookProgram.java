@@ -83,7 +83,6 @@ public class AccountBookProgram {
     private void update() throws IOException {
     	SearchView sv = new SearchView();
     	sv.update();
-    	
     }
 //
 //    private void delete() {

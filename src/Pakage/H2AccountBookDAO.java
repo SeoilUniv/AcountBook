@@ -19,7 +19,6 @@ public class H2AccountBookDAO implements AccountBookDAO {
             System.out.println("DB연결 성공!!");
         } catch (Exception e) {
             e.printStackTrace();
-            
         }
     }
 

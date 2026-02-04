@@ -55,7 +55,6 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 	@Override
 	public String SelectUpdate2(String category, String indate) {
 		return updateLogic.SelectUpdate2(category, indate);
-		
 	}
 
     
