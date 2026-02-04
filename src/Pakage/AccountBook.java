@@ -1,4 +1,4 @@
-package sangyoon;
+package Pakage;
 
 
 import java.util.Date;
@@ -62,7 +62,8 @@ public class AccountBook {
 	public void setDate(String date) {
 		this.date = date;
 	}
-
+	public void findById() {}
+	
 	@Override
 	public String toString() {
 		return "AccountBook [id=" + id + ", type=" + type + ", amount=" + amount + ", category=" + category + ", date=" + date + "]";

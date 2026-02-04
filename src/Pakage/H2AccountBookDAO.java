@@ -1,9 +1,9 @@
-package sangyoon;
+package Pakage;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
-import d260202_03.AccountBook;
+import Pakage.AccountBook;
 
 public class H2AccountBookDAO implements AccountBookDAO {
 
@@ -28,29 +28,29 @@ public class H2AccountBookDAO implements AccountBookDAO {
     
     
     // update
-	@Override
-	public int SelectUpdate2(AccountBook ab) {
-		try {
-		AccountBook new_ab = findById(ab.getCategory());
-
-		String sql = "update accountbook set amount=? where category=? and indate=?";
-		PreparedStatement ps = conn.prepareStatement(sql);
-		// ?가 있으므로 set 함수가 존재한다
-		
-		ps.setInt(1, new_ab.getAmount());
-		ps.setString(2, new_ab.getCategory());
-		ps.setString(3, new_ab.getIndate());
-
-		int rs = ps.executeUpdate();
-		ps.close();
-		return rs;
-		
-		}catch (Exception e) {
-			e.printStackTrace();
-			return 0;
-		}
-
-	}
+//	@Override
+//	public int SelectUpdate2(AccountBook ab) {
+//		try {
+//		AccountBook new_ab = findById(ab.getCategory());
+//
+//		String sql = "update accountbook set amount=? where category=? and indate=?";
+//		PreparedStatement ps = conn.prepareStatement(sql);
+//		// ?가 있으므로 set 함수가 존재한다
+//		
+//		ps.setInt(1, new_ab.getAmount());
+//		ps.setString(2, new_ab.getCategory());
+//		ps.setString(3, new_ab.getIndate());
+//
+//		int rs = ps.executeUpdate();
+//		ps.close();
+//		return rs;
+//		
+//		}catch (Exception e) {
+//			e.printStackTrace();
+//			return 0;
+//		}
+//
+//	}
 
 
     
@@ -84,4 +84,10 @@ public class H2AccountBookDAO implements AccountBookDAO {
             return null;
         }
     }
+
+	@Override
+	public int SelectUpdate2(AccountBook ab) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }
