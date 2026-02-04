@@ -23,6 +23,7 @@ public class Update extends Search{
 		ps.setString(3, ((AccountBook) new_ab).getDate());
 
 		int rs = ps.executeUpdate();
+		
 		ps.close();
 		return rs;
 		
