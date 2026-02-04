@@ -5,5 +5,5 @@ import java.util.List;
 import Pakage.AccountBook;
 
 public interface Update {
-	int SelectUpdate2(AccountBook ab);
+	int SelectUpdate2(AccountBook p);
 }

@@ -3,10 +3,11 @@ import java.util.List;
 
 import Interface.AccountBookDAO;
 
+
 public class AccountBookManager {
 
     AccountBookDAO dao;
-
+    AccountBook p;
     public AccountBookManager(AccountBookDAO dao) {
         this.dao = dao;
     }
@@ -20,7 +21,9 @@ public class AccountBookManager {
     
     
     // update
-    
+    public String update(String category, String indate) {
+    	return dao.SelectUpdate2(category,indate);
+    }
     
     
     // delete

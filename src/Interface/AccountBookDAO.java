@@ -10,4 +10,8 @@ public interface AccountBookDAO extends Update, Search{
     List<AccountBook> findAll();
     int delete(int id);
 	List<AccountBook> findByDate(String date);
+	int update(String category, String indate, AccountBook p);
+	String SelectUpdate2(String category, String indate);
+	String update(String category, String indate);
+	
 }

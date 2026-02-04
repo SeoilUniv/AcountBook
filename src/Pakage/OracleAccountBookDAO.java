@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Command.Search;
+import Command.Update;
 import Interface.AccountBookDAO;
 import Pakage.AccountBook;
 
 public class OracleAccountBookDAO implements AccountBookDAO {
 	private Search searchLogic = new Search();
+	private Update updateLogic = new Update();
     Connection conn;
     public OracleAccountBookDAO() {
         try {
@@ -45,29 +47,15 @@ public class OracleAccountBookDAO implements AccountBookDAO {
     
     
 //     update
-//	@Override
-//	public int SelectUpdate2(AccountBook ab) {
-//		try {
-//		AccountBook new_ab = findById(ab.getCategory());
-//
-//		String sql = "update accountbook set amount=? where category=? and indate=?";
-//		PreparedStatement ps = conn.prepareStatement(sql);
-//		// ?가 있으므로 set 함수가 존재한다
-//		
-//		ps.setInt(1, new_ab.getAmount());
-//		ps.setString(2, new_ab.getCategory());
-//		ps.setString(3, new_ab.getIndate());
-//
-//		int rs = ps.executeUpdate();
-//		ps.close();
-//		return rs;
-//		
-//		}catch (Exception e) {
-//			e.printStackTrace();
-//			return 0;
-//		}
-//
-//	}
+	@Override
+	public String update(String category, String indate) {
+		return updateLogic.SelectUpdate2(category, indate);
+	}
+	@Override
+	public String SelectUpdate2(String category, String indate) {
+		return updateLogic.SelectUpdate2(category, indate);
+	}
+
 	@Override
 	public int SelectUpdate2(AccountBook ab) {
 		// TODO Auto-generated method stub
@@ -81,6 +69,16 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+	@Override
+	public int update(String category, String indate, AccountBook p) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+
 
 
 

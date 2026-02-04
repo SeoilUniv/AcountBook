@@ -32,6 +32,11 @@ public class Search {
             return null;
         }
     }
+
+	public String updateLogic(String category, String indate) {
+		// TODO Auto-generated method stub
+		return null;
+	}
     
     
 }
