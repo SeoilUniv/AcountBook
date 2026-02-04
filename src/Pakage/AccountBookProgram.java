@@ -95,14 +95,14 @@ public class AccountBookProgram {
 
 	private void update() {
 
- sonubin
+
     private void update() throws IOException {
     	SearchView sv = new SearchView();
     	sv.update();
     }
 
 	}
-Hyeokjin
+
 //
 //    private void delete() {
 //        System.out.print("삭제할 ID: ");
