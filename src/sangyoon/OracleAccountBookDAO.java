@@ -30,6 +30,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
     // update
 	@Override
 	public int SelectUpdate2(AccountBook ab) {
+		try {
 		AccountBook new_ab = findById(ab.getCategory());
 
 		String sql = "update accountbook set amount=? where category=? and indate=?";
@@ -48,6 +49,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 			e.printStackTrace();
 			return 0;
 		}
+
 	}
 
 
