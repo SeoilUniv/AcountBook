@@ -57,11 +57,6 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 		return updateLogic.SelectUpdate2(category, indate);
 	}
 
-	@Override
-	public int SelectUpdate2(AccountBook ab) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
     
     
     // delete

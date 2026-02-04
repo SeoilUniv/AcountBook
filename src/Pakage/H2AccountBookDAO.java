@@ -37,7 +37,7 @@ public class H2AccountBookDAO implements AccountBookDAO {
 	}
     
 	@Override
-	public String SelectUpdate2(String category, String indate) {
+	public int SelectUpdate2(String category, String indate) {
 		return updateLogic.SelectUpdate2(category, indate);
 	}
 

@@ -17,6 +17,7 @@ public class Update extends Search{
 		PreparedStatement ps = conn.prepareStatement(sql);
 		// ?가 있으므로 set 함수가 존재한다
 		
+		
 		ps.setInt(1, ((AccountBook) new_ab).getAmount());
 		ps.setString(2, ((AccountBook) new_ab).getCategory());
 		ps.setString(3, ((AccountBook) new_ab).getDate());

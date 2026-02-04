@@ -21,7 +21,7 @@ public class AccountBookManager {
     
     
     // update
-    public String update(String category, String indate) {
+    public int update(String category, String indate) {
     	return dao.SelectUpdate2(category,indate);
     }
     
