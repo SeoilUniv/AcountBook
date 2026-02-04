@@ -19,14 +19,22 @@ public class AccountBookManager {
     // findAll
     
     public List<AccountBook> findAll() {
-        return dao.findAll(); 
+        return dao.findAll();
     }
     
     // update
     
     
     
-    // delete
+    // Delete
+    // 존재 여부 확인
+    public boolean isExist(int id) {
+        return dao.findById(id) != null;
+    }
+    // 삭제
+    public int delete(int id) {
+        return dao.deleteById(id);
+    }
     
     
     
@@ -34,5 +42,7 @@ public class AccountBookManager {
     public List<AccountBook> searchByDate(String date) {
         return dao.findByDate(date);
     }
+
+	
 
 }

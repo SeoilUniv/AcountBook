@@ -50,10 +50,6 @@ public class AccountBookProgram {
 		}
 	}
 
-	private void delete() {
-		// TODO Auto-generated method stub
-
-	}
 
 	private int menu() {
 		System.out.println("+=====================+");
@@ -96,18 +92,31 @@ public class AccountBookProgram {
 	private void update() {
 
 	}
-//
-//    private void delete() {
-//        System.out.print("삭제할 ID: ");
-//        id = Integer.parseInt(scan.nextLine().trim());
-//
-//        if (am.isExist(id)) {
-//            am.delete(id);
-//            System.out.println("삭제 완료");
-//        } else {
-//            System.out.println("삭제할 내역이 존재하지 않습니다.");
-//        }
-//    }
+	
+	private void delete() {
+	    System.out.print("삭제할 목록의 ID를 입력해주세요 : ");
+	    id = Integer.parseInt(scan.nextLine().trim());
+
+	    if (!am.isExist(id)) {
+	        System.out.println("해당 번호의 내역이 존재하지 않습니다.");
+	        return;
+	    }
+
+	    System.out.println("정말 삭제하시겠습니까? (Y/N) : ");
+	    if (!scan.nextLine().equalsIgnoreCase("Y")) {
+	        System.out.println("삭제가 취소되었습니다.");
+	        return;
+	    }
+
+	    int result = am.delete(id);
+
+	    if (result > 0) {
+	        System.out.println("삭제 완료");
+	    } else {
+	        System.out.println("삭제 실패");
+	    }
+	}
+
 
 	// 검색
 	private void searchByDate() throws IOException {
