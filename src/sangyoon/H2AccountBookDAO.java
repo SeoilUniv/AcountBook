@@ -32,7 +32,7 @@ public class H2AccountBookDAO implements AccountBookDAO {
 	public int SelectUpdate2(AccountBook ab) {
 		AccountBook new_ab = findById(ab.getCategory());
 
-		String sql = "update accountbook set amount=? where category=?, indate=?";
+		String sql = "update accountbook set amount=? where category=? and indate=?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		// ?가 있으므로 set 함수가 존재한다
 		
