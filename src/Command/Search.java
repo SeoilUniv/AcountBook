@@ -12,7 +12,7 @@ public class Search {
     public List<AccountBook> searchByDate(Connection conn, String date) {
         List<AccountBook> list = new ArrayList<>();
         String sql = "SELECT * FROM accountbook WHERE \"DATE\" = ?";
-
+        
         try (PreparedStatement ps = conn.prepareStatement(sql)) {
             ps.setString(1, date);
             ResultSet rs = ps.executeQuery();

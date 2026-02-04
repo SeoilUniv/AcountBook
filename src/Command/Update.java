@@ -7,6 +7,7 @@ import Pakage.AccountBook;
 public class Update {
 
 	public int SelectUpdate2(AccountBook ab) {
+		return 0;
 
 	}
 }

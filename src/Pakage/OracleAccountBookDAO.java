@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import Command.Search;
+import Interface.AccountBookDAO;
 import Pakage.AccountBook;
 
 public class OracleAccountBookDAO implements AccountBookDAO {
@@ -21,6 +22,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 
     
     //Search
+    
     @Override
     public List<AccountBook> findByDate(String date) {
         return searchLogic.searchByDate(conn, date);
@@ -32,7 +34,6 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
     
     
     // findAll
@@ -67,7 +68,11 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 //		}
 //
 //	}
-
+	@Override
+	public int SelectUpdate2(AccountBook ab) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
     
     
     // delete
@@ -76,6 +81,9 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
+
     
    
 }

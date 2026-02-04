@@ -1,7 +1,9 @@
 package Pakage;
 import java.util.List;
 
-public class AccountBookManager implements AccountBookDAO{
+import Interface.AccountBookDAO;
+
+public class AccountBookManager {
 
     AccountBookDAO dao;
 
@@ -29,9 +31,4 @@ public class AccountBookManager implements AccountBookDAO{
     public List<AccountBook> searchByDate(String date) {
         return dao.findByDate(date);
     }
-
-	@Override
-	public List<AccountBook> findByDate(String date) {
-		
-	}
 }
