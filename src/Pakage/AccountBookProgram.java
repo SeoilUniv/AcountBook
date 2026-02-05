@@ -6,14 +6,17 @@ import java.util.Scanner;
 
 import Command.Search;
 import Interface.AccountBookDAO;
+import View.DeleteView;
+import View.InsertView;
 import View.SearchView;
+import View.UpdateView;
 import View.findAllView;
 
 public class AccountBookProgram {
 
 	private AccountBookManager am;
 	private Scanner scan = new Scanner(System.in);
-
+	private InsertView insertView = new InsertView();
 	private int id;
 	private String type;
 	private int amount;
@@ -50,9 +53,15 @@ public class AccountBookProgram {
 		}
 	}
 
+	// 삭제
 	private void delete() {
-		// TODO Auto-generated method stub
-
+		DeleteView deleteView = new DeleteView(am);
+		try {
+			deleteView.delete();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 	private int menu() {
@@ -70,21 +79,10 @@ public class AccountBookProgram {
 		return Integer.parseInt(scan.nextLine().trim());
 	}
 
+	// AccountBookProgram 클래스의 insert() 메서드 내용 교체
 	private void insert() {
-//        System.out.print("구분(수입/지출): ");
-//        type = scan.nextLine();
-//
-//        System.out.print("금액: ");
-//        amount = Integer.parseInt(scan.nextLine());
-//
-//        System.out.print("분류(식비/교통비/...): ");
-//        category = scan.nextLine();
-//
-//        System.out.print("날짜(YYYY-MM-DD): ");
-//        date = scan.nextLine();
-//
-//        am.insert(type, amount, category, date);
-//        System.out.println("입력 완료");
+		// 복잡한 입력 로직은 InsertView 담당자에게 맡김
+		insertView.display(am);
 	}
 
 	private findAllView findAllView = new findAllView();
@@ -92,22 +90,11 @@ public class AccountBookProgram {
 	private void views() {
 		findAllView.display(am);
 	}
-
-	private void update() {
-
-	}
-//
-//    private void delete() {
-//        System.out.print("삭제할 ID: ");
-//        id = Integer.parseInt(scan.nextLine().trim());
-//
-//        if (am.isExist(id)) {
-//            am.delete(id);
-//            System.out.println("삭제 완료");
-//        } else {
-//            System.out.println("삭제할 내역이 존재하지 않습니다.");
-//        }
-//    }
+	
+    private void update() throws IOException {
+    	UpdateView update = new UpdateView();
+    	update.update();
+    }
 
 	// 검색
 	private void searchByDate() throws IOException {
