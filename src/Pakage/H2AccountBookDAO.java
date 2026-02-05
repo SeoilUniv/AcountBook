@@ -94,11 +94,6 @@ public class H2AccountBookDAO implements AccountBookDAO {
 		return 0;
 	}
 
-	@Override
-	public int SelectUpdate2(AccountBook p) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int update(String category, String indate, AccountBook p) {

@@ -93,7 +93,7 @@ public class AccountBookProgram {
 		findAllView.display(am);
 	}
 
-	private void update() {
+
 
 
     private void update() throws IOException {
@@ -101,7 +101,7 @@ public class AccountBookProgram {
     	sv.update();
     }
 
-	}
+
 
 //
 //    private void delete() {

@@ -33,8 +33,5 @@ public class Update extends Search{
 
 	}
 
-	public String SelectUpdate2(String category, String indate) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 }

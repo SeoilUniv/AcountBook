@@ -29,7 +29,7 @@ public class SearchView {
 		System.out.println("수정할 날짜를 입력하세요");
 		String indate = scan.nextLine().trim();
 		
-		String update = am.update(category, indate);
+		int update = am.update(category, indate);
 		
 //		for(AccountBook ab : update) {
 //			System.out.println(ab.toString());
