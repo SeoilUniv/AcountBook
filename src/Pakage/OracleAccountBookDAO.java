@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+import Command.Delete;
 import Command.Search;
 import Command.Update;
 import Command.findAll;
@@ -13,6 +14,7 @@ import Pakage.AccountBook;
 public class OracleAccountBookDAO implements AccountBookDAO {
 	private Search searchLogic = new Search();
 	private Update updateLogic = new Update();
+	private Delete deleteLogic = new Delete();
 	private findAll fa = new findAll();
 	Connection conn;
 
@@ -86,10 +88,10 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 	}
 
 	@Override
-	public int deleteById(int id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
+    public int deleteById(int id) {
+        // [핵심] 여기서 Command 파일로 연결해줍니다.
+        return deleteLogic.deleteById(conn, id);
+    }
 
 
 }
