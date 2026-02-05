@@ -19,10 +19,10 @@ public class Delete {
             if (rs.next()) {
                 return new AccountBook(
                         rs.getInt("id"),
-                        null,
+                        rs.getString("type"),
                         rs.getInt("amount"),
                         rs.getString("category"),
-                        rs.getString("date")
+                        rs.getString("indate")
                 );
             }
         } catch (Exception e) {
