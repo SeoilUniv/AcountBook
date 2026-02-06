@@ -62,7 +62,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 
 	@Override
 	public AccountBook findById(int id) {
-		// 1. ID로 딱 하나만 찾아오는 SQL
+		// ID로 딱 하나만 찾아오는 SQL
 		String sql = "SELECT * FROM accountbook WHERE id = ?";
 		AccountBook ab = null;
 
@@ -72,7 +72,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 			ResultSet rs = ps.executeQuery();
 
 			if (rs.next()) {
-				// 2. 찾은 데이터를 객체로 포장
+				// 찾은 데이터를 객체로 포장
 				ab = new AccountBook(rs.getInt("id"), rs.getString("type"), rs.getInt("amount"),
 						rs.getString("category"), rs.getString("date") // 또는 rs.getString("DATE")
 				);
@@ -83,7 +83,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 			e.printStackTrace();
 		}
 
-		// 3. 찾았으면 객체를, 없으면 null을 반환
+		// 찾았으면 객체를, 없으면 null을 반환
 		return ab;
 	}
 
