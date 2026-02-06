@@ -21,7 +21,7 @@ public class OracleAccountBookDAO implements AccountBookDAO {
 	public OracleAccountBookDAO() {
 		try {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.15.95:1521:xe", "system", "1234");
+			conn = DriverManager.getConnection("jdbc:oracle:thin:@172.16.15.58:1521:xe", "system", "1234");
 			System.out.println("DB연결 성공!!");
 		} catch (Exception e) {
 			e.printStackTrace();
