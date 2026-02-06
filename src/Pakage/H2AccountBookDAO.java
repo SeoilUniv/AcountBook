@@ -21,6 +21,26 @@ public class H2AccountBookDAO implements AccountBookDAO {
     }
 
     // insert
+    @Override
+    public int insert(AccountBook ab) {
+        String sql = "insert into accountbook(type, amount, category, indate) values(?, ?, ?, ?)";
+
+        try {
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ps.setString(1, ab.getType());
+            ps.setInt(2, ab.getAmount());
+            ps.setString(3, ab.getCategory());
+            ps.setString(4, ab.getDate());
+
+            int rs = ps.executeUpdate();
+            ps.close();
+            return rs;  // 1이면 성공
+        } catch (Exception e) {
+            e.printStackTrace();
+            return 0;   // 실패
+        }
+    }
+
     
     
     
